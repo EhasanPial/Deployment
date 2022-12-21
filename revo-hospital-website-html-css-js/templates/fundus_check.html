@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- normalize css -->
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/normalize.css') }}">
     <!-- custom css -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
 </head>
 
 <body>
@@ -21,7 +20,7 @@
     <header class="bg-blue">
         <nav class="navbar bg-blue">
             <div class="container flex">
-                <a href="index.html" class="navbar-brand">
+                <a href="/index" class="navbar-brand">
                     <img src="images/logo.png" alt="site logo">
                 </a>
                 <button type="button" class="navbar-show-btn">
@@ -34,17 +33,17 @@
                     </button>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="index.html" class="nav-link">Home</a>
+                            <a href="/index" class="nav-link">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="fundus_check.html" class="nav-link">Check Your Retina</a>
+                            <a href="/fundus_check" class="nav-link">Check Your Retina</a>
                         </li>
                         <li class="nav-item">
-                            <a href="read_details.html" class="nav-link">Our Deep Learning Model</a>
+                            <a href="/read_details" class="nav-link">Our Deep Learning Model</a>
                         </li>
                         <li class="nav-item">
-                            <a href="read_details.html" class="nav-link">Retinal Problems</a>
+                            <a href="/read_details" class="nav-link">Retinal Problems</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Contact</a>
@@ -58,28 +57,28 @@
             </div>
         </nav>
 
-       
+
     </header>
-    <section id = "about" class = "about py">
-        <div class = "about-inner">
-            <div class = "container grid">
-                <div class = "about-left text-center">
-                    <div class = "section-head">
+    <section id="about" class="about py">
+        <div class="about-inner">
+            <div class="container grid">
+                <div class="about-left text-center">
+                    <div class="section-head">
                         <h2>Automated Detection Of Mild And Multi-Class Diabetic Eye Diseases Using Deep Learning</h2>
-                        <div class = "border-line"></div>
+                        <div class="border-line"></div>
                     </div>
                     <br> <br> <br>
                     <div class="col-lg-12">
-                         <form  class="form-inline" action = "/predict" method = "post" enctype="multipart/form-data">
-                            <input type="file" name="file"/><br><br>
-                            <input type = "submit" class="btn btn-success" value="Predict">
-                        </form> 
-                      </div>
-                  
+                        <form class="form-inline" action="/fundus_check" method="post" enctype="multipart/form-data">
+                            <input type="file" name="file" /><br><br>
+                            <input type="submit" class="btn btn-success" value="Predict">
+                        </form>
+                    </div>
+
                 </div>
-                <div class = "about-right flex">
-                    <div class = "img">
-                        <img src = "images/about-img.png">
+                <div class="about-right flex">
+                    <div class="img">
+                        
                     </div>
                 </div>
             </div>
